@@ -1,6 +1,8 @@
 package com.oussama.messenger.services;
 
 import com.oussama.messenger.entities.Contact;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 

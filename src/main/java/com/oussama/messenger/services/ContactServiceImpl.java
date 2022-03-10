@@ -2,12 +2,15 @@ package com.oussama.messenger.services;
 import com.oussama.messenger.entities.Contact;
 import com.oussama.messenger.repositories.ContactRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ContactServiceImpl implements ContactService{
 
     @Autowired

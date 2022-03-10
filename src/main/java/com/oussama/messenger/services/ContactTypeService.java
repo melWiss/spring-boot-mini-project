@@ -8,7 +8,7 @@ import java.util.List;
 public interface ContactTypeService {
     public ContactType persistContactType(ContactType contact);
     public ContactType deleteContactType(Long id);
-    public List<ContactType> getAllContactTypess();
+    public List<ContactType> getAllContactTypes();
     public ContactType findContactTypeById(Long id);
     public List<ContactType> getContactTypesBytype(String type);
 }

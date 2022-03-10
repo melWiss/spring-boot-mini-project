@@ -3,9 +3,11 @@ package com.oussama.messenger.services;
 import com.oussama.messenger.entities.ContactType;
 import com.oussama.messenger.repositories.ContactTypeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ContactTypeServiceImpl implements ContactTypeService{
     @Autowired
     ContactTypeRepo contactTypeRepo;
@@ -22,7 +24,7 @@ public class ContactTypeServiceImpl implements ContactTypeService{
     }
 
     @Override
-    public List<ContactType> getAllContactTypess() {
+    public List<ContactType> getAllContactTypes() {
         return contactTypeRepo.findAll();
     }
 
