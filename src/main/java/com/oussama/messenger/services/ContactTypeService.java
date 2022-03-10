@@ -6,9 +6,10 @@ import com.oussama.messenger.entities.ContactType;
 import java.util.List;
 
 public interface ContactTypeService {
-    public ContactType persistContactType(ContactType contact);
-    public ContactType deleteContactType(Long id);
-    public List<ContactType> getAllContactTypes();
-    public ContactType findContactTypeById(Long id);
-    public List<ContactType> getContactTypesBytype(String type);
+    ContactType persistContactType(ContactType contact);
+    ContactType deleteContactType(Long id);
+    List<ContactType> getAllContactTypes();
+    ContactType findContactTypeById(Long id);
+    List<ContactType> getContactTypesBytype(String type);
+    ContactType updateContactType(ContactType type);
 }

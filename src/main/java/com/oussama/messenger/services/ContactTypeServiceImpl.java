@@ -37,4 +37,9 @@ public class ContactTypeServiceImpl implements ContactTypeService{
     public List<ContactType> getContactTypesBytype(String type) {
         return contactTypeRepo.findAll();
     }
+
+    @Override
+    public ContactType updateContactType(ContactType type) {
+        return contactTypeRepo.saveAndFlush(type);
+    }
 }
