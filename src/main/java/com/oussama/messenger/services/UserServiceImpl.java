@@ -39,4 +39,9 @@ public class UserServiceImpl implements UserService{
     public List<User> getUsersByFullName(String name) {
         return userRepo.findAll();
     }
+
+    @Override
+    public User updateUser(User user) {
+        return userRepo.saveAndFlush(user);
+    }
 }

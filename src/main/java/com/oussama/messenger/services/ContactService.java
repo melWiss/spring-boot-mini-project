@@ -12,4 +12,5 @@ public interface ContactService {
     public List<Contact> getAllContacts();
     public Contact findContactById(Long id);
     public List<Contact> getContactsByFullName(String name);
+    Contact updateContact(Contact contact);
 }

@@ -42,4 +42,9 @@ public class ContactServiceImpl implements ContactService{
     public List<Contact> getContactsByFullName(String name) {
         return contactRepo.findAll();
     }
+
+    @Override
+    public Contact updateContact(Contact contact) {
+        return contactRepo.saveAndFlush(contact);
+    }
 }
