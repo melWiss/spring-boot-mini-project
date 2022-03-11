@@ -5,6 +5,8 @@ import com.oussama.messenger.services.ContactTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(value = "/api/contact-types")
 public class ContactTypesController {
@@ -12,23 +14,23 @@ public class ContactTypesController {
     ContactTypeService contactTypeService;
 
     @GetMapping(value = "/all")
-    String fetchAll(){
-        return contactTypeService.getAllContactTypes().toString();
+    List<ContactType> fetchAll(){
+        return contactTypeService.getAllContactTypes();
     }
 
     @PostMapping(value = "/add")
-    String addContactType(@RequestBody ContactType type){
+    ContactType addContactType(@RequestBody ContactType type){
         ContactType t = contactTypeService.persistContactType(type);
-        return t.toString();
+        return t;
     }
 
     @DeleteMapping(value = "/delete/{id}")
-    String deleteContactType(@PathVariable Long id){
-        return contactTypeService.deleteContactType(id).toString();
+    ContactType deleteContactType(@PathVariable Long id){
+        return contactTypeService.deleteContactType(id);
     }
 
     @PutMapping(value = "/update")
-    String updateContactType(@RequestBody ContactType type){
-        return contactTypeService.updateContactType(type).toString();
+    ContactType updateContactType(@RequestBody ContactType type){
+        return contactTypeService.updateContactType(type);
     }
 }

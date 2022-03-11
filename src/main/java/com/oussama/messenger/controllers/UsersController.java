@@ -8,6 +8,8 @@ import com.oussama.messenger.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(value = "/api/users")
 public class UsersController {
@@ -15,23 +17,23 @@ public class UsersController {
     UserService userService;
 
     @GetMapping(value = "/all")
-    String fetchAll(){
-        return userService.getAllUsers().toString();
+    List<User> fetchAll(){
+        return userService.getAllUsers();
     }
 
     @PostMapping(value = "/add")
-    String addUser(@RequestBody User user){
+    User addUser(@RequestBody User user){
         User t = userService.persistUser(user);
-        return t.toString();
+        return t;
     }
 
     @DeleteMapping(value = "/delete/{id}")
-    String deleteUser(@PathVariable Long id){
-        return userService.deleteUser(id).toString();
+    User deleteUser(@PathVariable Long id){
+        return userService.deleteUser(id);
     }
 
     @PutMapping(value = "/update")
-    String updateUser(@RequestBody User user){
-        return userService.updateUser(user).toString();
+    User updateUser(@RequestBody User user){
+        return userService.updateUser(user);
     }
 }

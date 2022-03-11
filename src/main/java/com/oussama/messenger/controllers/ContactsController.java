@@ -18,23 +18,23 @@ public class ContactsController {
     ContactService contactService;
 
     @GetMapping(value = "/all")
-    String fetchAll(){
-        return contactService.getAllContacts().toString();
+    List<Contact> fetchAll(){
+        return contactService.getAllContacts();
     }
 
     @PostMapping(value = "/add")
-    String addContact(@RequestBody Contact type){
+    Contact addContact(@RequestBody Contact type){
         Contact t = contactService.persistContact(type);
-        return t.toString();
+        return t;
     }
 
     @DeleteMapping(value = "/delete/{id}")
-    String deleteContact(@PathVariable Long id){
-        return contactService.deleteContact(id).toString();
+    Contact deleteContact(@PathVariable Long id){
+        return contactService.deleteContact(id);
     }
 
     @PutMapping(value = "/update")
-    String updateContact(@RequestBody Contact contact){
-        return contactService.updateContact(contact).toString();
+    Contact updateContact(@RequestBody Contact contact){
+        return contactService.updateContact(contact);
     }
 }
