@@ -20,13 +20,13 @@ public class UsersController {
     }
 
     @PostMapping(value = "/add")
-    String addContactType(@RequestBody User user){
+    String addUser(@RequestBody User user){
         User t = userService.persistUser(user);
         return t.toString();
     }
 
     @DeleteMapping(value = "/delete/{id}")
-    String deleteContactType(@PathVariable Long id){
+    String deleteUser(@PathVariable Long id){
         return userService.deleteUser(id).toString();
     }
 
