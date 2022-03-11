@@ -30,8 +30,8 @@ public class UsersController {
         return userService.deleteUser(id).toString();
     }
 
-    /*@PutMapping(value = "/update")
-    String updateContactType(@RequestBody ContactType type){
-        return contactTypeService.updateContactType(type).toString();
-    }*/
+    @PutMapping(value = "/update")
+    String updateUser(@RequestBody User user){
+        return userService.updateUser(user).toString();
+    }
 }

@@ -33,8 +33,8 @@ public class ContactsController {
         return contactService.deleteContact(id).toString();
     }
 
-    /*@PutMapping(value = "/update")
-    String updateContactType(@RequestBody ContactType type){
-        return contactTypeService.updateContactType(type).toString();
-    }*/
+    @PutMapping(value = "/update")
+    String updateContact(@RequestBody Contact contact){
+        return contactService.updateContact(contact).toString();
+    }
 }
